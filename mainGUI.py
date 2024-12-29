@@ -81,7 +81,7 @@ def var_Get():
         print('group1 > group2')
         addOn = (f'\n{group1} > {group2}')
         previouslyMeasured = prevMeas + addOn
-        scaleG1Bigger = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsGroup1BiggerScale.png")
+        scaleG1Bigger = PhotoImage(file="images/12ObjectsGroup1BiggerScale.png")
         label.configure(image=scaleG1Bigger)
         label.photo = scaleG1Bigger
         previousLabel.configure(text=previouslyMeasured)
@@ -91,7 +91,7 @@ def var_Get():
         addOn = (f"{group1} < {group2}")
         previouslyMeasured = prevMeas + addOn
         print(type(previouslyMeasured))
-        scaleG2Bigger = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsGroup2BiggerScale.png")
+        scaleG2Bigger = PhotoImage(file="images/12ObjectsGroup2BiggerScale.png")
         label.configure(image=scaleG2Bigger)
         label.photo = scaleG2Bigger
         previousLabel.configure(text=previouslyMeasured)
@@ -99,7 +99,7 @@ def var_Get():
         print('group1 = group2')
         addOn = (f"{group1} = {group2}")
         previouslyMeasured = prevMeas + addOn
-        scaleEqual = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsEqualScale.png")
+        scaleEqual = PhotoImage(file="images/12ObjectsEqualScale.png")
         label.configure(image=scaleEqual)
         label.photo = scaleEqual
         previousLabel.configure(text=previouslyMeasured)
@@ -108,33 +108,46 @@ def btnPress():
     global measureCount
     measureCount = measureCount + 1
     if measureCount > 2:
-        guessButton = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsGuessButton.png")
+        guessButton = PhotoImage(file="images/12ObjectsGuessButton.png")
         btnMeasure.configure(image=guessButton, command=popUp)
         btnMeasure.photo = guessButton
     var_Get()
+
+def show_info_message():
+    msgIntro = "Welcome!"
+    msgInfo = "Hi there! This is my first GUI application all made in Python!\n\n" \
+              "A little how-to to get you started on using this application:\n" \
+              "1. To measure objects, simply just type the object number into an entry box.\n" \
+              "2. If you want to enter multiple objects into an entry box, separate" \
+              " each number by a space, no other character will work! eg. 1 5 8 9\n" \
+              "3. After your 3 uses of the scale, press the GUESS button and it will" \
+              " and it will bring up another window where you will guess the object" \
+              " and its weight using the minus or plus sign.\n\n" \
+              "It's that simple! Hope you enjoy!"
+    tkinter.messagebox.showinfo(msgIntro, msgInfo)
 
 gui = Tk(className="12Objects - LogicPuzzle")
 gui.geometry("640x480")
 gui.configure(bg='light blue')
 
-object1 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock1.png")
-object2 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock2.png")
-object3 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock3.png")
-object4 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock4.png")
-object5 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock5.png")
-object6 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock6.png")
-object7 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock7.png")
-object8 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock8.png")
-object9 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock9.png")
-object10 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock10.png")
-object11 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock11.png")
-object12 = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsRock12.png")
-Rocks = PhotoImage(file="12objectlogicpuzzle/images/RockArrangement.png")
-btnCheckAnswer = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsCheckAnswer.png")
-imgLighter = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsLighter.png")
-imgHeavier = PhotoImage(file="12objectlogicpuzzle/images/12ObjectsHeavier.png")
+object1 = PhotoImage(file="images/12ObjectsRock1.png")
+object2 = PhotoImage(file="images/12ObjectsRock2.png")
+object3 = PhotoImage(file="images/12ObjectsRock3.png")
+object4 = PhotoImage(file="images/12ObjectsRock4.png")
+object5 = PhotoImage(file="images/12ObjectsRock5.png")
+object6 = PhotoImage(file="images/12ObjectsRock6.png")
+object7 = PhotoImage(file="images/12ObjectsRock7.png")
+object8 = PhotoImage(file="images/12ObjectsRock8.png")
+object9 = PhotoImage(file="images/12ObjectsRock9.png")
+object10 = PhotoImage(file="images/12ObjectsRock10.png")
+object11 = PhotoImage(file="images/12ObjectsRock11.png")
+object12 = PhotoImage(file="images/12ObjectsRock12.png")
+Rocks = PhotoImage(file="images/RockArrangement.png")
+btnCheckAnswer = PhotoImage(file="images/12ObjectsCheckAnswer.png")
+imgLighter = PhotoImage(file="images/12ObjectsLighter.png")
+imgHeavier = PhotoImage(file="images/12ObjectsHeavier.png")
 
-initialScale = PhotoImage(file = "12objectlogicpuzzle/images/12ObjectsEqualScale.png")
+initialScale = PhotoImage(file = "images/12ObjectsEqualScale.png")
 label = Label(gui, bg='light blue', image = initialScale)
 label.place(relx=0.5, rely=0.56, anchor=CENTER)
 
@@ -145,11 +158,11 @@ prevMeas = 'Previously Measured:\n'
 previousLabel = Label(gui, bg='light blue', text=prevMeas)
 previousLabel.place(relx=0.825, rely=0.75, anchor=CENTER)
 
-titleBlock = PhotoImage(file = "12objectlogicpuzzle/images/12ObjectsTitleBlock.png")
+titleBlock = PhotoImage(file = "images/12ObjectsTitleBlock.png")
 tLabel = Label(gui, bg='light blue', image = titleBlock)
 tLabel.place(relx=0.5, rely=0.125, anchor=CENTER)
 
-btnImage = PhotoImage(file = "12objectlogicpuzzle/images/12ObjectsButton.png")
+btnImage = PhotoImage(file = "images/12ObjectsButton.png")
 btnMeasure = Button(gui, bg='light blue', image = btnImage, relief = 'flat')
 btnMeasure.place(relx=0.5, rely=0.925, anchor=CENTER)
 btnMeasure.configure(command=btnPress)
@@ -159,22 +172,12 @@ objImages = [object1, object2, object3, object4, object5, object6,
 
 var_G1 = StringVar()
 var_G2 = StringVar()
-entryG1 = Entry(gui, bg='white', textvariable=var_G1, width=15)
+entryG1 = Entry(gui, bg='white', textvariable=var_G1, width=15, bd=2)
 entryG1.place(relx=0.025, rely=0.52, anchor='w')
-entryG2 = Entry(gui, bg='white', textvariable=var_G2, width=15)
+entryG2 = Entry(gui, bg='white', textvariable=var_G2, width=15, bd=2)
 entryG2.place(relx=0.975, rely=0.52, anchor='e')
+entryG1.focus()
 
-msgIntro = "Welcome!"
-msgInfo = "Hi there! This is my first GUI application all made in Python!\n\n" \
-          "A little how-to to get you started on using this application:\n" \
-          "1. To measure objects, simply just type the object number into the" \
-          " desired entry box.\n" \
-          "2. If you want to enter multiple objects into an entry box, separate" \
-          " each number by a space, no other character will work! eg. 1 5 8 9\n" \
-          "3. After your 3 uses of the scale, press the GUESS button and it will" \
-          " and it will bring up another window where you will guess the object" \
-          " and its weight using the minus or plus sign.\n\n" \
-          "It's that simple! Hope you enjoy!"
-tkinter.messagebox.showinfo(msgIntro, msgInfo)
+gui.after(100, show_info_message)  #Gives the game time to load
 
 gui.mainloop()
