@@ -163,7 +163,7 @@ tLabel = Label(gui, bg='light blue', image = titleBlock)
 tLabel.place(relx=0.5, rely=0.125, anchor=CENTER)
 
 btnImage = PhotoImage(file = "images/12ObjectsButton.png")
-btnMeasure = Button(gui, bg='light blue', image = btnImage, relief = 'flat')
+btnMeasure = Button(gui, bg='light blue', image = btnImage, relief = 'flat', activebackground='light blue', borderwidth=0)
 btnMeasure.place(relx=0.5, rely=0.925, anchor=CENTER)
 btnMeasure.configure(command=btnPress)
 
@@ -172,9 +172,9 @@ objImages = [object1, object2, object3, object4, object5, object6,
 
 var_G1 = StringVar()
 var_G2 = StringVar()
-entryG1 = Entry(gui, bg='white', textvariable=var_G1, width=15, bd=2)
+entryG1 = Entry(gui, bg='white', fg='black', textvariable=var_G1, borderwidth=0, width=12, bd=0)
 entryG1.place(relx=0.025, rely=0.52, anchor='w')
-entryG2 = Entry(gui, bg='white', textvariable=var_G2, width=15, bd=2)
+entryG2 = Entry(gui, bg='white', fg='black', textvariable=var_G2, borderwidth=0, width=12, bd=0)
 entryG2.place(relx=0.975, rely=0.52, anchor='e')
 entryG1.focus()
 
